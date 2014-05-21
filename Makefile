@@ -65,108 +65,57 @@ include ../../../Makefile-Config.mk
 # Display
 #-------------------------------------------------------------------------------
 
-PROMPT              := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" GCD  "$(COLOR_NONE)"]> *** "
-
-#-------------------------------------------------------------------------------
-# Paths
-#-------------------------------------------------------------------------------
-
-DIR_SRC_DATA            = $(PATH_SRC_LIB_DISPATCH)data/
-DIR_SRC_GROUP           = $(PATH_SRC_LIB_DISPATCH)group/
-DIR_SRC_IO              = $(PATH_SRC_LIB_DISPATCH)io/
-DIR_SRC_OBJECT          = $(PATH_SRC_LIB_DISPATCH)object/
-DIR_SRC_ONCE            = $(PATH_SRC_LIB_DISPATCH)once/
-DIR_SRC_QUEUE           = $(PATH_SRC_LIB_DISPATCH)queue/
-DIR_SRC_SEMAPHORE       = $(PATH_SRC_LIB_DISPATCH)semaphore/
-DIR_SRC_SOURCE          = $(PATH_SRC_LIB_DISPATCH)source/
-DIR_SRC_TIME            = $(PATH_SRC_LIB_DISPATCH)time/
-
-#-------------------------------------------------------------------------------
-# Search paths
-#-------------------------------------------------------------------------------
-
-# Define the search paths for source files
-vpath %$(EXT_C)         $(PATH_SRC_LIB_DISPATCH)
-vpath %$(EXT_C)         $(DIR_SRC_DATA)
-vpath %$(EXT_C)         $(DIR_SRC_GROUP)
-vpath %$(EXT_C)         $(DIR_SRC_IO)
-vpath %$(EXT_C)         $(DIR_SRC_OBJECT)
-vpath %$(EXT_C)         $(DIR_SRC_ONCE)
-vpath %$(EXT_C)         $(DIR_SRC_QUEUE)
-vpath %$(EXT_C)         $(DIR_SRC_SEMAPHORE)
-vpath %$(EXT_C)         $(DIR_SRC_SOURCE)
-vpath %$(EXT_C)         $(DIR_SRC_TIME)
-
-#-------------------------------------------------------------------------------
-# File suffixes
-#-------------------------------------------------------------------------------
-
-# Adds the suffixes used in this file
-.SUFFIXES:  $(EXT_ASM_32)   \
-            $(EXT_ASM_64)   \
-            $(EXT_C)        \
-            $(EXT_H)        \
-            $(EXT_OBJ)      \
-            $(EXT_BIN)
+PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" GCD  "$(COLOR_NONE)"]> *** "
 
 #-------------------------------------------------------------------------------
 # Files
 #-------------------------------------------------------------------------------
 
-_FILES_C_OBJ_BUILD              = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(PATH_SRC_LIB_DISPATCH))
-_FILES_C_OBJ_BUILD_DATA         = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_DATA))
-_FILES_C_OBJ_BUILD_GROUP        = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_GROUP))
-_FILES_C_OBJ_BUILD_IO           = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_IO))
-_FILES_C_OBJ_BUILD_OBJECT       = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_OBJECT))
-_FILES_C_OBJ_BUILD_ONCE         = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_ONCE))
-_FILES_C_OBJ_BUILD_QUEUE        = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_QUEUE))
-_FILES_C_OBJ_BUILD_SEMAPHORE    = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_SEMAPHORE))
-_FILES_C_OBJ_BUILD_SOURCE       = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_SOURCE))
-_FILES_C_OBJ_BUILD_TIME         = $(call XEOS_FUNC_C_OBJ,$(PATH_BUILD_32_LIB_OBJ_DISPATCH),$(DIR_SRC_TIME))
+_FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH))
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)assert/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)ctype/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)errno/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)fenv/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)locale/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)math/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)setjmp/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)signal/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)stdio/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)stdlib/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)string/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)time/)
 
 #-------------------------------------------------------------------------------
 # Built-in targets
 #-------------------------------------------------------------------------------
 
 # Declaration for phony targets, to avoid problems with local files
-.PHONY: all     \
-        clean
+.PHONY: all clean
 
 #-------------------------------------------------------------------------------
 # Phony targets
 #-------------------------------------------------------------------------------
 
 # Build the full project
-all:    $(_FILES_C_OBJ_BUILD_DATA)      \
-        $(_FILES_C_OBJ_BUILD_GROUP)     \
-        $(_FILES_C_OBJ_BUILD_IO)        \
-        $(_FILES_C_OBJ_BUILD_OBJECT)    \
-        $(_FILES_C_OBJ_BUILD_ONCE)      \
-        $(_FILES_C_OBJ_BUILD_QUEUE)     \
-        $(_FILES_C_OBJ_BUILD_SEMAPHORE) \
-        $(_FILES_C_OBJ_BUILD_SOURCE)    \
-        $(_FILES_C_OBJ_BUILD_TIME)      \
-        $(_FILES_C_OBJ_BUILD)
+all: $(_FILES)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch.a"$(COLOR_NONE)
-	@$(AR_32) $(ARGS_AR_32) $(PATH_BUILD_32_LIB_BIN)libdispatch.a $(PATH_BUILD_32_LIB_OBJ_DISPATCH)*$(EXT_OBJ)
-	@$(RANLIB_32) $(PATH_BUILD_32_LIB_BIN)libdispatch.a
+	@$(call XEOS_FUNC_LIB_STATIC_32,libdispatch,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch.a"$(COLOR_NONE)
-	@$(AR_64) $(ARGS_AR_64) $(PATH_BUILD_64_LIB_BIN)libdispatch.a $(PATH_BUILD_64_LIB_OBJ_DISPATCH)*$(EXT_OBJ)
-	@$(RANLIB_64) $(PATH_BUILD_64_LIB_BIN)libdispatch.a
+	@$(call XEOS_FUNC_LIB_STATIC_64,libdispatch,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch.so"$(COLOR_NONE)
-	@$(LD_32) $(ARGS_LD_SHARED_32) -o $(PATH_BUILD_32_LIB_BIN)libdispatch.so $(PATH_BUILD_32_LIB_OBJ_DISPATCH)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libdispatch,$^)
 	
 	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch.so"$(COLOR_NONE)
-	@$(LD_64) $(ARGS_LD_SHARED_64) -o $(PATH_BUILD_64_LIB_BIN)libdispatch.so $(PATH_BUILD_64_LIB_OBJ_DISPATCH)*$(EXT_OBJ_PIC)
+	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libdispatch,$^)
 
 # Cleans the build files
 clean:
 	
 	@$(PRINT) $(PROMPT)"Cleaning all build files"
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_OBJ_DISPATCH)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_OBJ_DISPATCH)*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_LIB_BIN)libdispatch.*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_LIB_BIN)libdispatch.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_DISPATCH))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_DISPATCH))
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_BIN)libdispatch.*
+	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_BIN)libdispatch.*
