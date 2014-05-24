@@ -72,17 +72,14 @@ PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  
 #-------------------------------------------------------------------------------
 
 _FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH))
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)assert/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)ctype/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)errno/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)fenv/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)locale/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)math/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)setjmp/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)signal/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)stdio/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)stdlib/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)string/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)data/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)group/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)io/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)object/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)once/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)queue/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)semaphore/)
+_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)source/)
 _FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)time/)
 
 #-------------------------------------------------------------------------------
@@ -99,16 +96,16 @@ _FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)time/)
 # Build the full project
 all: $(_FILES)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch.a"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_STATIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_STATIC_32,libdispatch,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch.a"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_STATIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_STATIC_64,libdispatch,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch.so"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libdispatch,$^)
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch.so"$(COLOR_NONE)
+	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
 	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libdispatch,$^)
 
 # Cleans the build files
