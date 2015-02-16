@@ -59,60 +59,25 @@
 
 # $Id$
 
-include ../../../Makefile-Config.mk
+include make/Config.mk
+include make/Targets.mk
 
-#-------------------------------------------------------------------------------
-# Display
-#-------------------------------------------------------------------------------
+PROMPT  := XEOS SOURCE LIB GCD
+DEPS    := XEOS-lib-system XEOS-lib-posix XEOS-lib-c99
+FILES   := $(call XEOS_FUNC_C_FILES,$(DIR_SRC)data/)      \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)group/)     \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)io/)        \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)object/)    \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)once/)      \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)queue/)     \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)semaphore/) \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)source/)    \
+           $(call XEOS_FUNC_C_FILES,$(DIR_SRC)time/)
 
-PROMPT  := "    ["$(COLOR_GREEN)" XEOS "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" SRC  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" LIB  "$(COLOR_NONE)"]> ["$(COLOR_GREEN)" GCD  "$(COLOR_NONE)"]> *** "
-
-#-------------------------------------------------------------------------------
-# Files
-#-------------------------------------------------------------------------------
-
-_FILES  = $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH))
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)data/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)group/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)io/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)object/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)once/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)queue/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)semaphore/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)source/)
-_FILES += $(call XEOS_FUNC_C_OBJ,$(PATH_SRC_LIB_DISPATCH)time/)
-
-#-------------------------------------------------------------------------------
-# Built-in targets
-#-------------------------------------------------------------------------------
-
-# Declaration for phony targets, to avoid problems with local files
-.PHONY: all clean
-
-#-------------------------------------------------------------------------------
-# Phony targets
-#-------------------------------------------------------------------------------
-
-# Build the full project
-all: $(_FILES)
+all: obj-build
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_STATIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_STATIC_32,libdispatch,$^)
+	@:
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the library archive"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_STATIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_STATIC_64,libdispatch,$^)
+clean: obj-clean
 	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 32 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_DYNAMIC_32,libdispatch,$^)
-	
-	@$(PRINT) $(PROMPT)$(COLOR_CYAN)"Generating the dynamic library"$(COLOR_NONE)" [ 64 bits ]: "$(COLOR_GRAY)"libdispatch$(EXT_LIB_DYNAMIC)"$(COLOR_NONE)
-	@$(call XEOS_FUNC_LIB_DYNAMIC_64,libdispatch,$^)
-
-# Cleans the build files
-clean:
-	
-	@$(PRINT) $(PROMPT)"Cleaning all build files"
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_DISPATCH))
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_OBJ)$(subst $(PATH_SRC),,$(PATH_SRC_LIB_DISPATCH))
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_32_BIN)libdispatch.*
-	@$(RM) $(ARGS_RM) $(PATH_BUILD_64_BIN)libdispatch.*
+	@:
