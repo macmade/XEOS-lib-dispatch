@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_OBJECT_H__
-#define __XEOS_LIB_DISPATCH_OBJECT_H__
+#ifndef XEOS_LIB_DISPATCH_OBJECT_H
+#define XEOS_LIB_DISPATCH_OBJECT_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -84,4 +84,4 @@ void    dispatch_suspend( dispatch_object_t object );
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_OBJECT_H__ */
+#endif /* XEOS_LIB_DISPATCH_OBJECT_H */

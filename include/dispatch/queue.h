@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_QUEUE_H__
-#define __XEOS_LIB_DISPATCH_QUEUE_H__
+#ifndef XEOS_LIB_DISPATCH_QUEUE_H
+#define XEOS_LIB_DISPATCH_QUEUE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -111,4 +111,4 @@ void                dispatch_sync_f( dispatch_queue_t queue, void * context, dis
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_QUEUE_H__ */
+#endif /* XEOS_LIB_DISPATCH_QUEUE_H */

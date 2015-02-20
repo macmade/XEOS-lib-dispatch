@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H__
-#define __XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H__
+#ifndef XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H
+#define XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -74,4 +74,4 @@ typedef struct __dispatch_group_s * dispatch_group_t;
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H__ */
+#endif /* XEOS_LIB_DISPATCH_TYPES_DISPATCH_GROUP_T_H */

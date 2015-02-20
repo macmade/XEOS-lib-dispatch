@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_IO_H__
-#define __XEOS_LIB_DISPATCH_IO_H__
+#ifndef XEOS_LIB_DISPATCH_IO_H
+#define XEOS_LIB_DISPATCH_IO_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -103,4 +103,4 @@ void            dispatch_write( dispatch_fd_t fd, dispatch_data_t data, dispatch
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_IO_H__ */
+#endif /* XEOS_LIB_DISPATCH_IO_H */

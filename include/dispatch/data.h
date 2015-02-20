@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_DATA_H__
-#define __XEOS_LIB_DISPATCH_DATA_H__
+#ifndef XEOS_LIB_DISPATCH_DATA_H
+#define XEOS_LIB_DISPATCH_DATA_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -93,4 +93,4 @@ size_t          dispatch_data_get_size( dispatch_data_t data );
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_DATA_H__ */
+#endif /* XEOS_LIB_DISPATCH_DATA_H */

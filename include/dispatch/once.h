@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_ONCE_H__
-#define __XEOS_LIB_DISPATCH_ONCE_H__
+#ifndef XEOS_LIB_DISPATCH_ONCE_H
+#define XEOS_LIB_DISPATCH_ONCE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -77,4 +77,4 @@ void dispatch_once( dispatch_once_t * predicate, dispatch_block_t block );
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_ONCE_H__ */
+#endif /* XEOS_LIB_DISPATCH_ONCE_H */

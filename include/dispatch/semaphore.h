@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_SEMAPHORE_H__
-#define __XEOS_LIB_DISPATCH_SEMAPHORE_H__
+#ifndef XEOS_LIB_DISPATCH_SEMAPHORE_H
+#define XEOS_LIB_DISPATCH_SEMAPHORE_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -79,4 +79,4 @@ long                    dispatch_semaphore_wait( dispatch_semaphore_t dsema, dis
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_SEMAPHORE_H__ */
+#endif /* XEOS_LIB_DISPATCH_SEMAPHORE_H */

@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH___PRIVATE_TYPES_H__
-#define __XEOS_LIB_DISPATCH___PRIVATE_TYPES_H__
+#ifndef XEOS_LIB_DISPATCH___PRIVATE_TYPES_H
+#define XEOS_LIB_DISPATCH___PRIVATE_TYPES_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -72,7 +72,7 @@ extern "C" {
 #include <dispatch/types/dispatch_queue_t.h>
 #include <dispatch/types/dispatch_function_t.h>
 
-#define __DISPATCH_OBJECT_HEADER        \
+#define XEOS_LIB_DISPATCH_OBJECT_HEADER \
     void              * isa;            \
     int32_t             retainCount;    \
     int32_t             suspendCount;   \
@@ -82,73 +82,73 @@ extern "C" {
 
 struct __dispatch_object_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_continuation_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_queue_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_queue_attr_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_group_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_source_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_source_attr_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_semaphore_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_data_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_io_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_operation_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
 struct __dispatch_fld_s
 {
-    __DISPATCH_OBJECT_HEADER
+    XEOS_LIB_DISPATCH_OBJECT_HEADER
     char __reserved[ 256 ];
 };
 
@@ -156,4 +156,4 @@ struct __dispatch_fld_s
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH___PRIVATE_TYPES_H__ */
+#endif /* XEOS_LIB_DISPATCH___PRIVATE_TYPES_H */

@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H__
-#define __XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H__
+#ifndef XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H
+#define XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -77,4 +77,4 @@ typedef bool ( ^ dispatch_data_applier_t )( dispatch_data_t region, size_t offse
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H__ */
+#endif /* XEOS_LIB_DISPATCH_TYPES_DISPATCH_DATA_APPLIER_T_H */

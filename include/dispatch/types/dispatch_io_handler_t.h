@@ -61,8 +61,8 @@
 
 /* $Id$ */
 
-#ifndef __XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H__
-#define __XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H__
+#ifndef XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H
+#define XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -77,4 +77,4 @@ typedef void ( ^ dispatch_io_handler_t )( bool done, dispatch_data_t data, int e
 }
 #endif
 
-#endif /* __XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H__ */
+#endif /* XEOS_LIB_DISPATCH_TYPES_DISPATCH_IO_HANDLER_T_H */
