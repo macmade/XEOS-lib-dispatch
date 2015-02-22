@@ -81,3 +81,7 @@ all: obj-build
 clean: obj-clean
 	
 	@:
+
+distclean: clean deps-clean
+	
+	@:
