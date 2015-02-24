@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <dispatch/queue.h>
 
 void dispatch_apply_f( size_t iterations, dispatch_queue_t queue, void * context, void ( * work )( void *, size_t ) )

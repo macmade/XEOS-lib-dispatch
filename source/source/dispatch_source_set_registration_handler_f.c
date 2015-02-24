@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <dispatch/source.h>
 
 void dispatch_source_set_registration_handler_f( dispatch_source_t source, dispatch_function_t registration_handler )

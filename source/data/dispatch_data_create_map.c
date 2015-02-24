@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <dispatch/data.h>
 
 dispatch_data_t dispatch_data_create_map( dispatch_data_t data, const void ** buffer_ptr, size_t * size_ptr )

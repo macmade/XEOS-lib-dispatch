@@ -59,6 +59,11 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
+/*!
+ * @author          Jean-David Gadina
+ * @copyright       (c) 2010-2015, Jean-David Gadina - www.xs-labs.com
+ */
+
 #include <dispatch/io.h>
 
 void dispatch_write( dispatch_fd_t fd, dispatch_data_t data, dispatch_queue_t queue, void ( ^ handler )( dispatch_data_t data, int error ) )
