@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/io.h>
 
 void dispatch_io_close( dispatch_io_t channel, dispatch_io_close_flags_t flags )

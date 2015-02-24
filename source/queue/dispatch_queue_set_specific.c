@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/queue.h>
 
 void dispatch_queue_set_specific( dispatch_queue_t queue, const void * key, void * context, dispatch_function_t destructor )

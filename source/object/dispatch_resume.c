@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/object.h>
 #include <dispatch/__private/types.h>
 #include <system/types/null.h>

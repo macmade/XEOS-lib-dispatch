@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/data.h>
 
 dispatch_data_t dispatch_data_create( const void * buffer, size_t size, dispatch_queue_t queue, dispatch_block_t destructor )

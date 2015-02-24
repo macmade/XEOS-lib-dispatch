@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/group.h>
 
 void dispatch_group_notify( dispatch_group_t group, dispatch_queue_t queue, dispatch_block_t block )

@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/semaphore.h>
 
 long dispatch_semaphore_signal( dispatch_semaphore_t dsema )

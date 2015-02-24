@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/data.h>
 
 dispatch_data_t dispatch_data_create_concat( dispatch_data_t data1, dispatch_data_t data2 )

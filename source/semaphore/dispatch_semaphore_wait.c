@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/semaphore.h>
 
 long dispatch_semaphore_wait( dispatch_semaphore_t dsema, dispatch_time_t timeout )

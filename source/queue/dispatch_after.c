@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/queue.h>
 
 void dispatch_after( dispatch_time_t when, dispatch_queue_t queue, dispatch_block_t block )

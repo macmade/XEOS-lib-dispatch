@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/io.h>
 
 void dispatch_write( dispatch_fd_t fd, dispatch_data_t data, dispatch_queue_t queue, void ( ^ handler )( dispatch_data_t data, int error ) )

@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/source.h>
 
 void dispatch_source_set_event_handler_f( dispatch_source_t source, dispatch_function_t handler )

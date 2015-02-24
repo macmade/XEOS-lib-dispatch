@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/source.h>
 
 uintptr_t dispatch_source_get_handle( dispatch_source_t source )

@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/queue.h>
 
 void dispatch_barrier_async( dispatch_queue_t queue, dispatch_block_t block )

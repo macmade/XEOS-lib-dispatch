@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/io.h>
 
 void dispatch_io_set_low_water( dispatch_io_t channel, size_t low_water )

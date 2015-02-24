@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/once.h>
 
 void dispatch_once( dispatch_once_t * predicate, dispatch_block_t block )

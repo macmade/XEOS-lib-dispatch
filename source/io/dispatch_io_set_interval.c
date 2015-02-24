@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/io.h>
 
 void dispatch_io_set_interval( dispatch_io_t channel, uint64_t interval, dispatch_io_interval_flags_t flags )

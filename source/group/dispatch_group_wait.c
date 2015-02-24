@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/group.h>
 
 long dispatch_group_wait( dispatch_group_t group, dispatch_time_t timeout )

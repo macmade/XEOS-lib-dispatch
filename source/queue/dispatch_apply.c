@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/queue.h>
 
 void dispatch_apply( size_t iterations, dispatch_queue_t queue, void ( ^ block )( size_t ) )

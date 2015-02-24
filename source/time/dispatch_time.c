@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/time.h>
 
 dispatch_time_t dispatch_time( dispatch_time_t when, int64_t delta )

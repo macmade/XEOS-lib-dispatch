@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/data.h>
 
 dispatch_data_t dispatch_data_create_subrange( dispatch_data_t data, size_t offset, size_t length )

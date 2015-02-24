@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/source.h>
 
 unsigned long dispatch_source_get_data( dispatch_source_t source )

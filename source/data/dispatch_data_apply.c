@@ -59,8 +59,6 @@
  * OF THE POSSIBILITY OF SUCH DAMAGE.
  ******************************************************************************/
 
-/* $Id$ */
-
 #include <dispatch/data.h>
 
 bool dispatch_data_apply( dispatch_data_t data, dispatch_data_applier_t applier )
